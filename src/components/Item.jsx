@@ -1,13 +1,14 @@
 /* eslint-disable react/prop-types */
-export default function Item({ item }) {
+export default function Item({ item, handleDelete,handleUpdate }) {
   return (
     <li>
+      <input type="checkbox" value={item.packed} onChange={() => {handleUpdate(item.id)}} />
       <span style={item.packed ? { textDecoration: "line-through" } : {}}>
         {item.quantity}
         &nbsp;
         {item.description}
       </span>
-      <button>❌</button>
+      <button onClick={() => handleDelete(item.id)}>❌</button>
     </li>
   );
 }
