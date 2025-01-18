@@ -29,8 +29,9 @@ function App() {
         setAddNewItem={setAddNewItem}
         handleDelete={handleDelete}
         handleUpdate ={handleUpdate}
+        
       />
-      <Stats />
+      <Stats addNewItem={addNewItem} />
     </div>
   );
 }

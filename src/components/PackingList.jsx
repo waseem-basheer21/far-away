@@ -5,7 +5,13 @@ export default function PackingList({
   addNewItem,
   handleDelete,
   handleUpdate,
-}) {
+  setAddNewItem
+}) {  
+      const handleClear = ()=>{   
+       const confirmed =  confirm("Are you sure you want to clear the list?");
+       if (confirmed) setAddNewItem([])
+      }
+          
   return (
     <div className="list">
       <ul className="">
@@ -18,6 +24,9 @@ export default function PackingList({
           />
         ))}
       </ul>
+      <div className="actions">
+        <button onClick={handleClear}>Clear list</button>
+      </div>
     </div>
   );
 }
